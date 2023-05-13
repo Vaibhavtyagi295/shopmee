@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f4;
+        }
+    
+        h1 {
+          margin-top: 0;
+          padding: 1rem;
+          background-color: #333;
+          color: #fff;
+          text-align: center;
+        }
+    
+        form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 2rem 0;
+        }
+    
+        label {
+          display: block;
+          margin-bottom: 0.5rem;
+          font-weight: bold;
+        }
+    
+        input[type="text"],
+        input[type="number"] {
+          padding: 0.5rem;
+          border: none;
+          border-radius: 0.25rem;
+          margin-bottom: 1rem;
+        }
+    
+        button[type="submit"] {
+          padding: 0.5rem 1rem;
+          background-color: #333;
+          color: #fff;
+          border: none;
+          border-radius: 0.25rem;
+          cursor: pointer;
+        }
+    
+        button[type="submit"]:hover {
+          background-color: #555;
+        }
+      </style>
+</head>
+<body>
+<!-- views/menus/new.ejs -->
+
+<h1>Add New Menu</h1>
+<form action="/ordermaker" method="POST" enctype="multipart/form-data">
+  <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+  </div>
+  <div>
+      <label for="image">Image:</label>
+      <input type="file" id="image" name="image" required>
+  </div>
+  <div>
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required></textarea>
+  </div>
+  <div>
+      <label for="price">Price:</label>
+      <input type="number" id="price" name="price" required>
+  </div>
+  <div>
+      <label for="categories">Categories:</label>
+      <select id="categories" name="categories" required>
+          <option value="">--Select a Category--</option>
+          <option value="tech">Tech</option>
+          <option value="clothes">Clothes</option>
+          <option value="shoes">Shoes</option>
+          <option value="electronics">Electronics</option>
+          <option value="household">Household</option>
+      </select>
+  </div>
+  <div>
+      <label for="deliveryTime">Delivery Time:</label>
+      <input type="number" id="deliveryTime" name="deliveryTime" min="1" max="30" value="4">
+  </div>
+  <button type="submit">Add Menu</button>
+</form>
+
+</body>
+</html>
